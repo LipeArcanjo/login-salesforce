@@ -15,15 +15,16 @@ from login import exibir_menu,cadastrar_usuario,realizar_login,alterar_acessibil
 # Programa principal
 while True:
     exibir_menu()
-    escolha = input("Escolha a opção (1/2/3/4): ")
+    escolha = int(input("Escolha a opção (1/2/3/4): "))
 
-    if escolha == "1":
-        cadastrar_usuario()
-    elif escolha == "2":
-        realizar_login()
-    elif escolha == "3":
-        alterar_acessibilidades()
-    elif escolha == "4":
-        visualizar_acessibilidades()
-    else:
-        print("Opção inválida. Escolha 1 para cadastrar-se, 2 para login, 3 para alterar acessibilidades ou 4 para visualizar acessibilidades.")
+    match escolha:
+        case 1:
+            cadastrar_usuario()
+        case 2:
+            realizar_login()
+        case 3:
+            alterar_acessibilidades()
+        case 4:
+            visualizar_acessibilidades()
+        case _:
+            print("Opção inválida. Escolha 1 para cadastrar-se, 2 para login, 3 para alterar acessibilidades ou 4 para visualizar acessibilidades.")
